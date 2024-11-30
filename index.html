@@ -26,6 +26,10 @@
       <nav>
         <div class="logo">A M K</div>
 
+        <div class="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+
         <ul>
           <li><a href="#home" class="active">Home</a></li>
 
@@ -44,7 +48,7 @@
       <div class="home-container">
         <div class="profile-image">
           <img
-            src="ID CARD PIC.png"
+            src="ID_CARD_PIC-removebg-preview.png"
             alt="Profile Picture"
             class="profile-pic"
           />
@@ -297,6 +301,21 @@
           if (link.getAttribute("href").slice(1) === current) {
             link.classList.add("active");
           }
+        });
+      });
+
+      // Hamburger menu functionality
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('nav ul');
+
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('show');
         });
       });
     </script>
